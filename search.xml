@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<search> 
+  
+  
+    
+    <entry>
+      <title>如何在hexo的文章里上传图片</title>
+      <link href="2021/01/11/method-img/"/>
+      <url>2021/01/11/method-img/</url>
+      
+        <content type="html"><![CDATA[<h1 id="第一种方法"><a href="#第一种方法" class="headerlink" title="第一种方法"></a>第一种方法</h1><ol><li><p>首先，我们得到博客的根目录下 查看_config.yml文件<br>查找 post_asset_folder 字段确定post_asset_folder<br>设置为 <strong>post_asset_folder:true</strong></p></li><li><p>设置完之后 在根目录下执行 <code>Git Bash here</code><br>输入创建文章的时候(hexo new post “xx”)<br>Hexo会自动建立一个与文章同名的文件夹，你可以把与该文章相关的所有资源都放到此文件夹内，这样就可以更方便的使用资源。</p></li><li><p>当然，进行这一步之前，必须要下载一个插件 可以用cmd控制台进入到文件夹的根目录下，输入   <code>npm install https://github.com/CodeFalling/hexo-asset-image --save</code><br>来进行插件的安装   </p></li><li><p>创建好文章后，会发现多出来一个同名的文件夹，这个时候把图片放入文件夹即可，博客写在.md文件中，而图片放在文件夹里</p></li><li><p>要引用图片的时候，在博客里用markdown的语法!<code>[](xx/x.png)</code> 就可以引用图片了，方括号是随便打的。</p></li></ol><ol start="6"><li>这个时候在本地预览的时候，当然是可以看到的，但是你还没有上传到github中，所以在hexo d之前，你需要使用hexo clean hexo g hexo deploy 将本地博客推送到远程，即可看到文章中的图片。<span class="github-emoji"><span>😃</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/1f603.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span></li></ol><p>当然 这种方法也不是完美的 下面介绍另一种方法</p><h1 id="第二种方法"><a href="#第二种方法" class="headerlink" title="第二种方法"></a>第二种方法</h1><ol><li>在根目录下配置文件_config.yml 中有 post_asset_folder:false改为true。这样在建立文件时，Hexo会自动建立一个与文章同名的文件夹，这样就可以把与该文章相关的所有资源（图片）都放到那个文件夹里方便后面引用。（和之前一样）</li><li>git bash安装插件：npm install <a href="https://github.com/7ym0n/hexo-asset-image">https://github.com/7ym0n/hexo-asset-image</a> –save（这是个修改过的插件，经测试无问题），使用这个插件来引入图片，而不是网上那些方法里说的用传统md语法相对路径的方法。</li><li>插入图片时用这种方式：<br><code>{% asset_img test.jpg This is an test image %}</code></li></ol><p>其中test.jpg就是你要引用的图片，我这里就是test.jpg，后面的This is an test image是图片描述，可以自己修改。<br>4. 这样就能成功显示了<br>使用<code>hexo cl &amp;&amp; hexo g &amp;&amp; hexo d</code> 测试一下吧</p>]]></content>
+      
+      
+      
+        <tags>
+            
+            <tag> 技能 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>Front matter介绍</title>
+      <link href="2021/01/11/Matter/"/>
+      <url>2021/01/11/Matter/</url>
+      
+        <content type="html"><![CDATA[<p>Front-matter 选项中的所有内容均为非必填的。但建议至少填写 title 和 date 的值。</p><img src="/2021/01/11/Matter/intr.jpg" class="">]]></content>
+      
+      
+      
+        <tags>
+            
+            <tag> 技能 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>MarkdownPad2基本语法</title>
+      <link href="2021/01/10/Markdown2%E9%A3%9F%E7%94%A8%E6%89%8B%E5%86%8C/"/>
+      <url>2021/01/10/Markdown2%E9%A3%9F%E7%94%A8%E6%89%8B%E5%86%8C/</url>
+      
+        <content type="html"><![CDATA[<h2 id="换行和空格"><a href="#换行和空格" class="headerlink" title="换行和空格"></a>换行和空格</h2><h3 id="换行"><a href="#换行" class="headerlink" title="换行"></a>换行</h3><p><code>行尾加两个空格</code></p><h3 id="空格"><a href="#空格" class="headerlink" title="空格"></a>空格</h3><p><code>&amp;nbsp; 与html类似</code></p><h2 id="标题"><a href="#标题" class="headerlink" title="标题"></a>标题</h2><pre><code> # 一级标题 ## 二级标题 ### 三级标题</code></pre><h2 id="字体"><a href="#字体" class="headerlink" title="字体"></a>字体</h2><h3 id="1-加粗"><a href="#1-加粗" class="headerlink" title="(1)加粗"></a>(1)加粗</h3><p> 要加粗的文字左右分别用两个*号包起来。<br> <code>**这是要加粗的文字**</code><br> <strong>加粗</strong></p><h3 id="2-斜体"><a href="#2-斜体" class="headerlink" title="(2)斜体"></a>(2)斜体</h3><p> 要倾斜的文字左右分别用一个*号包起来。<br> <code>*这是要倾斜的文字*</code><br> <em>倾斜</em></p><h3 id="3-斜体加粗"><a href="#3-斜体加粗" class="headerlink" title="(3)斜体加粗"></a>(3)斜体加粗</h3><p> 要斜体加粗的文字左右分别用三个*包起来。<br> <code>***这是斜体加粗的文字*** </code></p><h2 id="引用"><a href="#引用" class="headerlink" title="引用"></a>引用</h2><p>在引用的文字前加&gt;即可，引用也可以嵌套，如加两个&gt;&gt;三个&gt;&gt;&gt;<br> <code>&gt;引用的内容</code><br> <code>&gt;&gt;引用的内容1</code><br> <code>&gt;&gt;&gt;引用的内容2</code></p><blockquote><p>text1</p><blockquote><p>text2</p><blockquote><p>text3</p></blockquote></blockquote></blockquote><h2 id="分割线"><a href="#分割线" class="headerlink" title="分割线"></a>分割线</h2><p> 三个或三个以上的*。<br> <code>快要分隔了</code><br> <code>***</code><br> 这是一条华丽的分割线:</p><hr><h2 id="超链接"><a href="#超链接" class="headerlink" title="超链接"></a>超链接</h2><p> <code>[超链接名](超链接地址 "超链接描述")</code><br> <code>例子：  [Google](https://www.google.com.hk/ "谷歌") </code><br> <a href="https://1245505490.github.io/" title="主页">主页</a></p><h2 id="列表"><a href="#列表" class="headerlink" title="列表"></a>列表</h2><p> 和HTML类似 但又有些许不同</p><h3 id="无序列表"><a href="#无序列表" class="headerlink" title="无序列表"></a>无序列表</h3><p><code>* 列表内容1</code><br><code>* 列表内容2</code><br><code>* 列表内容3</code>      </p><ul><li><p>text1  </p></li><li><p>text2  </p></li><li><p>text3</p><h3 id="有序列表"><a href="#有序列表" class="headerlink" title="有序列表"></a>有序列表</h3><p>数字加点加空格。<br><code>1. 有序列表1</code><br><code>2. 有序列表2</code><br><code>3. 有序列表3</code>    </p></li></ul><ol><li>有序列表1  </li><li>有序列表2  </li><li>有序列表3 </li></ol><h3 id="列表嵌套"><a href="#列表嵌套" class="headerlink" title="列表嵌套"></a>列表嵌套</h3><p> 在上一级和下一级之间敲三个空格即可。<br> <code>1. 有序列表1</code><br> <code> * 无序列表1</code><br> <code> * 无序列表2</code><br> <code>2. 有序列表2</code><br> <code> * 无序列表1</code><br> <code> * 无序列表2</code></p><h2 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h2><h3 id="单行代码"><a href="#单行代码" class="headerlink" title="单行代码"></a>单行代码</h3><p> 代码之间分别用一个反引号包起来。<br> <code>` System.out.println("Hello World"); `</code></p><pre><code>while(true)  {      System.out.println("Hello World");  }</code></pre>]]></content>
+      
+      
+      
+        <tags>
+            
+            <tag> 技能 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>小勇哥的历程</title>
+      <link href="2021/01/09/%E5%B0%8F%E5%8B%87%E5%93%A5%E7%9A%84%E5%8E%86%E7%A8%8B/"/>
+      <url>2021/01/09/%E5%B0%8F%E5%8B%87%E5%93%A5%E7%9A%84%E5%8E%86%E7%A8%8B/</url>
+      
+        <content type="html"><![CDATA[<p>本文章介绍了小勇哥的心酸历程</p><h3 id="小勇哥的身世"><a href="#小勇哥的身世" class="headerlink" title="小勇哥的身世"></a>小勇哥的身世</h3><pre><code> 小勇哥 真名李子勇    北京山顶洞人</code></pre><p><strong>点击链接添加小勇哥吧</strong>：<a href="tencent://AddContact/?fromId=45&amp;fromSubId=1&amp;subcmd=all&amp;uin=1097356076&amp;website=www.oicqzone.com">小勇哥</a></p><h3 id="爱好"><a href="#爱好" class="headerlink" title="爱好"></a>爱好</h3><pre><code> 喜欢儿童 （炼铜biss)</code></pre><h3 id="目前状况"><a href="#目前状况" class="headerlink" title="目前状况"></a>目前状况</h3><pre><code> 位于东华理工大学软件学院，目前是一名男同</code></pre><p><strong>真令人感到害怕</strong></p>]]></content>
+      
+      
+      
+        <tags>
+            
+            <tag> 说明 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+  
+  
+</search>
